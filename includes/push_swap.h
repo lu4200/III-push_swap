@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lucas <lucas@student.42.fr>                +#+  +:+       +#+        */
+/*   By: lumaret <lumaret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 02:22:48 by lumaret           #+#    #+#             */
-/*   Updated: 2024/02/10 14:57:10 by lucas            ###   ########.fr       */
+/*   Updated: 2024/02/10 22:16:07 by lumaret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,9 @@ typedef struct s_stack_node
 	bool		above_med;
 	bool		cheapest;
 
-	struct	s_stack_node *next;
-	struct	s_stack_node *prev;
-	struct	s_stack_node *target;
+	struct	s_stack_node	*next;
+	struct	s_stack_node	*prev;
+	struct	s_stack_node	*target;
 }	t_stack_node;
 
 //Handle errors
@@ -47,17 +47,19 @@ void	for_each_push(t_stack_node **stack, t_stack_node *top_node, char name);
 static void	add_node(t_stack_node **stack, int n);
 
 //stack utils
-int	stack_len(t_stack_node *stack);
-t_stack_node	*point_on_last(t_stack_node *stack);
 t_stack_node	*min_o_stack(t_stack_node *stack);
-t_stack_node	*max_o_stack(t_stack_node *stack);
-char	**ps_split(char *s, char c);
+t_stack_node		*point_on_last(t_stack_node *stack);
+int		stack_len(t_stack_node *stack);
+t_stack_node		*max_o_stack(t_stack_node *stack);
+char			**ps_split(char *s, char c);
+bool	is_sorted(t_stack_node *stack);
 
 //commands
 
 //alogrithms
-void	current_index(t_stack_node *stack);
-static void	set_target_a(t_stack_node *a, t_stack_node *b);
-static void	cost_analysis_a(t_stack_node *a, t_stack_node *b);
+void	sort_three(t_stack_node **a);
+void	turk_sort(t_stack_node **a, t_stack_node **b);
 
+void	current_index(t_stack_node *stack);
+void	set_cheapest(t_stack_node *stack);
 #endif
