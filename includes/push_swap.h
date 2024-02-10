@@ -6,7 +6,7 @@
 /*   By: lucas <lucas@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 02:22:48 by lumaret           #+#    #+#             */
-/*   Updated: 2024/02/09 18:03:26 by lucas            ###   ########.fr       */
+/*   Updated: 2024/02/10 14:55:26 by lucas            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,9 @@ void	print_error(t_stack_node **a);
 
 //stack init
 static long	ft_atol(const char *s);
-void	init_stack_a(t_stack_node **a, char **argv)
-t_stack_node *the_cheapest(t_stack_node *stack)
-void	for_each_push(t_stack_node **stack, t_stack_node *top_node, char name)
+void	init_stack_a(t_stack_node **a, char **argv);
+t_stack_node *the_cheapest(t_stack_node *stack);
+void	for_each_push(t_stack_node **stack, t_stack_node *top_node, char name);
 
 //nodes init
 static void	add_node(t_stack_node **stack, int n);
