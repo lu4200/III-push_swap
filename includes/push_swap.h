@@ -6,7 +6,7 @@
 /*   By: lucas <lucas@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 02:22:48 by lumaret           #+#    #+#             */
-/*   Updated: 2024/02/10 14:55:26 by lucas            ###   ########.fr       */
+/*   Updated: 2024/02/10 14:57:10 by lucas            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ typedef struct s_stack_node
 
 	struct	s_stack_node *next;
 	struct	s_stack_node *prev;
-	struct	s_stack_node *target
+	struct	s_stack_node *target;
 }	t_stack_node;
 
 //Handle errors
