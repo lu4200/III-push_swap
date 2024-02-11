@@ -6,7 +6,7 @@
 /*   By: lumaret <lumaret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/11 00:06:50 by lumaret           #+#    #+#             */
-/*   Updated: 2024/02/11 02:31:49 by lumaret          ###   ########.fr       */
+/*   Updated: 2024/02/11 02:37:23 by lumaret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ t_stack_node	sa(t_stack_node **a, bool print)
 		ft_printf("sa\n");
 }
 
-t_stack_node	sa(t_stack_node **b, bool print)
+t_stack_node	sb(t_stack_node **b, bool print)
 {
 	swap(b);
 	if (!print)

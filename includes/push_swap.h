@@ -6,7 +6,7 @@
 /*   By: lumaret <lumaret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 02:22:48 by lumaret           #+#    #+#             */
-/*   Updated: 2024/02/10 22:16:07 by lumaret          ###   ########.fr       */
+/*   Updated: 2024/02/11 02:37:53 by lumaret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,8 @@ t_stack_node *the_cheapest(t_stack_node *stack);
 void	for_each_push(t_stack_node **stack, t_stack_node *top_node, char name);
 
 //nodes init
-static void	add_node(t_stack_node **stack, int n);
+void	init_node_a(t_stack_node *a, t_stack_node *b);
+void	init_node_b(t_stack_node *a, t_stack_node *b);
 
 //stack utils
 t_stack_node	*min_o_stack(t_stack_node *stack);
@@ -55,6 +56,9 @@ char			**ps_split(char *s, char c);
 bool	is_sorted(t_stack_node *stack);
 
 //commands
+t_stack_node	sa(t_stack_node **a, bool print);
+t_stack_node	sb(t_stack_node **b, bool print);
+t_stack_node	ss(t_stack_node **a, t_stack_node **b, bool print);
 
 //alogrithms
 void	sort_three(t_stack_node **a);
