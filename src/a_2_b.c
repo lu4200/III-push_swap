@@ -6,7 +6,7 @@
 /*   By: lumaret <lumaret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 17:53:59 by lumaret           #+#    #+#             */
-/*   Updated: 2024/02/10 22:13:38 by lumaret          ###   ########.fr       */
+/*   Updated: 2024/02/10 23:38:03 by lumaret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,8 +84,8 @@ static void	cost_analysis_a(t_stack_node *a, t_stack_node *b)
 
 void	set_cheapest(t_stack_node *stack)
 {
-	long			cheapest;
 	t_stack_node		*cheapest_node;
+	long			cheapest;
 
 	if (!stack)
 		return ;

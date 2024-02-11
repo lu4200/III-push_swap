@@ -6,11 +6,13 @@
 /*   By: lumaret <lumaret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/10 21:44:46 by lumaret           #+#    #+#             */
-/*   Updated: 2024/02/10 22:15:29 by lumaret          ###   ########.fr       */
+/*   Updated: 2024/02/10 23:03:09 by lumaret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
+//move_a_2_b
+//move_b_2_a
 
 // algo dans les graaaaandes lignes
 void	turk_sort(t_stack_node **a, t_stack_node **b)
