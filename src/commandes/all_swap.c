@@ -6,7 +6,7 @@
 /*   By: lumaret <lumaret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/11 00:06:50 by lumaret           #+#    #+#             */
-/*   Updated: 2024/02/11 01:11:47 by lumaret          ###   ########.fr       */
+/*   Updated: 2024/02/11 01:21:53 by lumaret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,18 @@
 
 static void	swap(t_stack_node **head)
 {
-	if (!*head || !(*head)->next)
+	t_stack_node	*temp;
+
+	if (*head == NULL || (*head)->next == NULL)
 		return ;
-	*head = (*head)->next;
-	(*head)->prev->prev = *head;
-	(*head)->prev->next = (*head)->next;
-	if ((*head)->next)
-		(*head)->next->prev = (*head)->prev;
-	(*head)->next = (*head)->prev;
-	(*head)->prev = NULL;
+	temp = (*head)->next;
+	(*head)->next = temp->next;
+	(*head)->prev = temp;
+
+	if (temp->next != NULL)
+		temp->next->prev = *head;
+
+	temp->next = *head;
+	temp->prev = NULL;
+	*head = temp;
 }
