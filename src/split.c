@@ -6,7 +6,7 @@
 /*   By: lumaret <lumaret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 20:53:46 by lumaret           #+#    #+#             */
-/*   Updated: 2024/02/08 21:57:48 by lumaret          ###   ########.fr       */
+/*   Updated: 2024/02/14 05:36:36 by lumaret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ static char	*get_next_word(char *s, char sep)
 	next_word = malloc((size_t)len * sizeof(char) + 1);
 	if (!next_word)
 		return (NULL);
-	while ((s[cursor] != c) && s[cursor])
+	while ((s[cursor] != sep) && s[cursor])
 		next_word[i++] = s[cursor++];
 	next_word[i] = '\0';
 	return (next_word);

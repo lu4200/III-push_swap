@@ -6,7 +6,7 @@
 /*   By: lumaret <lumaret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 19:48:20 by lumaret           #+#    #+#             */
-/*   Updated: 2024/02/14 05:24:10 by lumaret          ###   ########.fr       */
+/*   Updated: 2024/02/14 06:36:40 by lumaret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,19 @@ void	init_stack_a(t_stack_node **a, char **argv)
 }
 
 t_stack_node *the_cheapest(t_stack_node *stack)
-{}
+{
+	if (!stack)
+		return (NULL);
+	while (stack)
+	{
+		if (stack->cheapest)
+			return (stack);
+		stack = stack->next;
+	}
+	return (NULL);
+}
 
 void	for_each_push(t_stack_node **stack, t_stack_node *top_node, char name)
-{}
+{
+	
+}
