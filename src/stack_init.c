@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack_init.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lumaret <lumaret@student.42.fr>            +#+  +:+       +#+        */
+/*   By: lucas <lucas@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 19:48:20 by lumaret           #+#    #+#             */
-/*   Updated: 2024/02/14 06:36:40 by lumaret          ###   ########.fr       */
+/*   Updated: 2024/02/15 06:01:45 by lucas            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,5 +93,21 @@ t_stack_node *the_cheapest(t_stack_node *stack)
 
 void	for_each_push(t_stack_node **stack, t_stack_node *top_node, char name)
 {
-	
+	while (*stack != top_node) 
+	{
+		if (name == 'a') 
+		{
+			if (top_node->above_med)
+				ra(stack, false);
+			else
+				rra(stack, false);
+		}
+		else if (name == 'b') //If not, and it is stack `b`, execute the following
+		{
+			if (top_node->above_med)
+				rb(stack, false);
+			else
+				rrb(stack, false);
+		}	
+	}
 }
