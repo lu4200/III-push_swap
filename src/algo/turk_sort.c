@@ -6,7 +6,7 @@
 /*   By: lucas <lucas@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/10 21:44:46 by lumaret           #+#    #+#             */
-/*   Updated: 2024/02/15 06:05:17 by lucas            ###   ########.fr       */
+/*   Updated: 2024/02/15 06:12:46 by lucas            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 // stat rotate2
 // stat rrotate2
 //move_a_2_b
+void	move_a_2_b(t_stack_node **a, t_stack_node **b)
+{}
 //move_b_2_a
 //put top
 
