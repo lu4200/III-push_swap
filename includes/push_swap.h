@@ -6,7 +6,7 @@
 /*   By: lumaret <lumaret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 02:22:48 by lumaret           #+#    #+#             */
-/*   Updated: 2024/02/19 16:09:28 by lumaret          ###   ########.fr       */
+/*   Updated: 2024/02/19 20:11:32 by lumaret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 
 # include <stdbool.h>
 # include <limits.h>
-# include "../includes/libft/libft.h"
-# include "../includes/ft_printf/ft_printf.h"
+# include "../libft/libft.h"
+# include "../ft_printf/ft_printf.h"
 
 typedef struct s_stack_node
 {
@@ -58,9 +58,9 @@ bool		is_sorted(t_stack_node *stack);
 char		**ps_split(char *s, char c);
 
 //commands
-t_stack_node	sa(t_stack_node **a, bool print);
-t_stack_node	sb(t_stack_node **b, bool print);
-t_stack_node	ss(t_stack_node **a, t_stack_node **b, bool print);
+void		sa(t_stack_node **a, bool print);
+void		sb(t_stack_node **b, bool print);
+void		ss(t_stack_node **a, t_stack_node **b, bool print);
 
 void		ra(t_stack_node **a, bool print);
 void		rb(t_stack_node **b, bool print);
