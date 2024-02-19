@@ -6,7 +6,7 @@
 /*   By: lumaret <lumaret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/10 21:08:41 by lumaret           #+#    #+#             */
-/*   Updated: 2024/02/10 22:12:39 by lumaret          ###   ########.fr       */
+/*   Updated: 2024/02/19 17:04:44 by lumaret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,5 @@ void	sort_three(t_stack_node **a)
 	else if ((*a)->next == biggest)
 		rra(a, false);
 	if ((*a)->nb > (*a)->next->nb)
-		sa(*a, false);
+		sa(a, false);
 }

@@ -6,7 +6,7 @@
 /*   By: lumaret <lumaret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/10 21:44:46 by lumaret           #+#    #+#             */
-/*   Updated: 2024/02/19 15:35:20 by lumaret          ###   ########.fr       */
+/*   Updated: 2024/02/19 17:13:40 by lumaret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,13 +68,13 @@ void	turk_sort(t_stack_node **a, t_stack_node **b)
 {
 	int	lena;
 
-	lena = stack_len(a);
+	lena = stack_len(*a);
 	//push 2 element de a dans b si lena > 3 sinon tri a 3
 	if (lena-- > 3 && !is_sorted(*a))
 		pb(b, a, false);
 	if (lena-- > 3 && !is_sorted(*a))
 		pb(b, a, false);
-	while (lena-- > 3 && !is_sorted)
+	while (lena-- > 3 && !is_sorted(*a))
 	{
 		init_node_a(*a, *b);
 // push tous les elements de a vers b prealablement triee jusqua len_a=3

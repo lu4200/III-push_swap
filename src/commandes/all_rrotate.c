@@ -6,7 +6,7 @@
 /*   By: lumaret <lumaret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 19:02:18 by lumaret           #+#    #+#             */
-/*   Updated: 2024/02/13 22:54:25 by lumaret          ###   ########.fr       */
+/*   Updated: 2024/02/19 16:04:59 by lumaret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,4 +38,12 @@ void	rrb(t_stack_node **b, bool print)
 	rrotate(b);
 	if (!print)
 		ft_printf("rrb\n");
+}
+
+void	rrr(t_stack_node **a, t_stack_node **b, bool print)
+{
+	rrotate(a);
+	rrotate(b);
+	if (!print)
+		ft_printf("rrr\n");
 }
