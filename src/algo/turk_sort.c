@@ -6,7 +6,7 @@
 /*   By: lumaret <lumaret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/10 21:44:46 by lumaret           #+#    #+#             */
-/*   Updated: 2024/02/15 16:34:35 by lumaret          ###   ########.fr       */
+/*   Updated: 2024/02/19 15:35:20 by lumaret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,8 +50,18 @@ static void	move_b_2_a(t_stack_node **a, t_stack_node **b)
 	for_each_push(a, (*b)->target, 'a');
 	pa(a, b, false);
 }
-//put top
 
+//put top
+static void	put_top(t_stack_node **a)
+{
+	while ((*a)->nb != min_o_stack(*a)->nb) 
+	{
+		if (min_o_stack(*a)->above_med)
+			ra(a, false);
+		else
+			rra(a, false);
+	}
+}
 
 // algo dans les graaaaandes lignes
 void	turk_sort(t_stack_node **a, t_stack_node **b)
