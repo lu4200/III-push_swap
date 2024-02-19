@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack_init.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lucas <lucas@student.42.fr>                +#+  +:+       +#+        */
+/*   By: lumaret <lumaret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 19:48:20 by lumaret           #+#    #+#             */
-/*   Updated: 2024/02/15 06:01:45 by lucas            ###   ########.fr       */
+/*   Updated: 2024/02/19 15:54:31 by lumaret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,14 +71,14 @@ void	init_stack_a(t_stack_node **a, char **argv)
 		n = ft_atol(argv[i]);
 		if (n > INT_MAX || n < INT_MIN)
 			print_error(a);
-		if (error_duplicate(*a, (int)n))
+		if (doublons_error(*a, (int)n))
 			print_error(a);
 		add_node(a, (int)n);
 		i++;
 	}
 }
 
-t_stack_node *the_cheapest(t_stack_node *stack)
+t_stack_node	*the_cheapest(t_stack_node *stack)
 {
 	if (!stack)
 		return (NULL);
