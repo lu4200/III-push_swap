@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   all_swap.c                                         :+:      :+:    :+:   */
+/*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lumaret <lumaret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/11 00:06:50 by lumaret           #+#    #+#             */
-/*   Updated: 2024/02/11 02:37:23 by lumaret          ###   ########.fr       */
+/*   Updated: 2024/02/20 14:49:56 by lumaret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,24 +28,24 @@ static void	swap(t_stack_node **head)
 	*head = temp;
 }
 
-t_stack_node	sa(t_stack_node **a, bool print)
+void	sa(t_stack_node **a, bool print)
 {
 	swap(a);
 	if (!print)
-		ft_printf("sa\n");
+		write(1, "sa\n", 3);
 }
 
-t_stack_node	sb(t_stack_node **b, bool print)
+void	sb(t_stack_node **b, bool print)
 {
 	swap(b);
 	if (!print)
-		ft_printf("sb\n");
+		write(1, "sb\n", 3);
 }
 
-t_stack_node	ss(t_stack_node **a, t_stack_node **b, bool print)
+void	ss(t_stack_node **a, t_stack_node **b, bool print)
 {
 	swap(a);
 	swap(b);
 	if (!print)
-		ft_printf("ss\n");
+		write(1, "ss\n", 3);
 }

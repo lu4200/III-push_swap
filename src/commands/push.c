@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   all _push.c                                        :+:      :+:    :+:   */
+/*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lumaret <lumaret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 15:36:44 by lumaret           #+#    #+#             */
-/*   Updated: 2024/02/19 15:51:59 by lumaret          ###   ########.fr       */
+/*   Updated: 2024/02/20 15:24:19 by lumaret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,12 +38,12 @@ void	pa(t_stack_node **a, t_stack_node **b, bool print)
 {
 	push(a, b);
 	if (!print)
-		ft_printf("pa\n");
+		write(1, "pa\n", 3);
 }
 
 void	pb(t_stack_node **a, t_stack_node **b, bool print)
 {
 	push(b, a);
 	if (!print)
-		ft_printf("pb\n");
+		write(1, "pb\n", 3);
 }

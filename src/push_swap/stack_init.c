@@ -6,7 +6,7 @@
 /*   By: lumaret <lumaret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 19:48:20 by lumaret           #+#    #+#             */
-/*   Updated: 2024/02/19 15:54:31 by lumaret          ###   ########.fr       */
+/*   Updated: 2024/02/20 16:08:40 by lumaret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ static long	ft_atol(const char *s)
 			sign *= -1;
 		s++;
 	}
-	while (ft_isdigit(*s))
+	while (*s >= 0 && *s <= 9)
 		res = res * 10 + (*s++ - '0');
 	return (res * sign);
 }
@@ -66,7 +66,7 @@ void	init_stack_a(t_stack_node **a, char **argv)
 	i = 0;
 	while (argv[i])
 	{
-		if (error_syntax(argv[i]))
+		if (syntaxe_error(argv[i]))
 			print_error(a);
 		n = ft_atol(argv[i]);
 		if (n > INT_MAX || n < INT_MIN)

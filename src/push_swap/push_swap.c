@@ -6,7 +6,7 @@
 /*   By: lumaret <lumaret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 02:45:52 by lumaret           #+#    #+#             */
-/*   Updated: 2024/02/08 20:06:16 by lumaret          ###   ########.fr       */
+/*   Updated: 2024/02/20 16:02:36 by lumaret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@ int	main(int argc, char **argv)
 	if (argc == 1 || (argc == 2 && !argv[1][0]))
 		return (1);
 	else if (argc == 2)
-		argv = ft_split(argv[1], ' ');
+		argv = ps_split(argv[1], ' ');
 	init_stack_a(&a, argv + 1);
-	if (!stack_sorted(a))
+	if (!is_sorted(a))
 	{
 		if (stack_len(a) == 2)
 			sa(&a, false);

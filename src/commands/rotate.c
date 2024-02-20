@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   all_rotate.c                                       :+:      :+:    :+:   */
+/*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lumaret <lumaret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/10 23:54:47 by lumaret           #+#    #+#             */
-/*   Updated: 2024/02/13 20:04:31 by lumaret          ###   ########.fr       */
+/*   Updated: 2024/02/20 14:46:04 by lumaret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,14 +30,14 @@ void	ra(t_stack_node **a, bool print)
 {
 	rotate(a);
 	if (!print)
-		ft_printf("ra\n");
+		write(1, "ra\n", 3);
 }
 
 void	rb(t_stack_node **b, bool print)
 {
 	rotate(b);
 	if (!print)
-		ft_print("rb\n");
+		write(1, "rb\n", 3);
 }
 
 void	rr(t_stack_node **a, t_stack_node **b, bool print)
@@ -45,6 +45,6 @@ void	rr(t_stack_node **a, t_stack_node **b, bool print)
 	rotate(a);
 	rotate(b);
 	if (!print)
-		ft_printf("rr\n");
+		write(1, "rr\n", 3);
 }
 

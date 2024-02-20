@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lucas <lucas@student.42.fr>                +#+  +:+       +#+        */
+/*   By: lumaret <lumaret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 02:22:48 by lumaret           #+#    #+#             */
-/*   Updated: 2024/02/20 13:00:49 by lucas            ###   ########.fr       */
+/*   Updated: 2024/02/20 15:37:02 by lumaret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,10 @@
 # define PUSH_SWAP_H
 
 # include <stdbool.h>
+# include <unistd.h>
 # include <limits.h>
-# include "../libft/libft.h"
-# include "../src/ft_printf/ft_printf.h"
+# include <stdlib.h>
+
 
 typedef struct s_stack_node
 {
@@ -38,7 +39,7 @@ int			syntaxe_error(char *str_n);
 int			doublons_error(t_stack_node *a, int n);
 
 //stack init
-void		for_each_push(t_stack_node **stack, t_stack_node *top_node, char name);
+void	for_each_push(t_stack_node **stack, t_stack_node *top_node, char name);
 void		init_stack_a(t_stack_node **a, char **argv);
 t_stack_node	*the_cheapest(t_stack_node *stack);
 
