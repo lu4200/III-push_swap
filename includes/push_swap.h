@@ -6,7 +6,7 @@
 /*   By: lumaret <lumaret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 02:22:48 by lumaret           #+#    #+#             */
-/*   Updated: 2024/02/20 15:37:02 by lumaret          ###   ########.fr       */
+/*   Updated: 2024/02/20 19:18:27 by lumaret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <unistd.h>
 # include <limits.h>
 # include <stdlib.h>
+# include <stdio.h>
 
 
 typedef struct s_stack_node
@@ -57,6 +58,7 @@ t_stack_node	*max_o_stack(t_stack_node *stack);
 int		stack_len(t_stack_node *stack);
 bool		is_sorted(t_stack_node *stack);
 char		**ps_split(char *s, char c);
+void	print_stack(t_stack_node *a, t_stack_node *b);
 
 //commands
 void		sa(t_stack_node **a, bool print);

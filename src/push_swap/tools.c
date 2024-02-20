@@ -6,11 +6,12 @@
 /*   By: lumaret <lumaret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 19:55:34 by lumaret           #+#    #+#             */
-/*   Updated: 2024/02/10 21:36:33 by lumaret          ###   ########.fr       */
+/*   Updated: 2024/02/20 18:39:55 by lumaret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
+#include <stdio.h>
 
 int	stack_len(t_stack_node *stack)
 {
@@ -25,6 +26,30 @@ int	stack_len(t_stack_node *stack)
 		len ++;
 	}
 	return (len);
+}
+
+void	print_stack(t_stack_node* a, t_stack_node* b)
+{
+	t_stack_node	*current1;
+	t_stack_node	*current2;
+
+	current1 = a;
+	current2 = b;
+	printf("Contenu de la liste a : ");
+	while (current1 != NULL)
+	{
+		printf("%d ", current1->nb);
+		current1 = current1->next;
+	}
+	printf("\n");
+
+	printf("Contenu de la liste b : ");
+	while (current2 != NULL)
+	{
+		printf("%d ", current2->nb);
+		current2 = current2->next;
+	}
+	printf("\n");
 }
 
 t_stack_node	*point_on_last(t_stack_node *stack)
