@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: lumaret <lumaret@student.42.fr>            +#+  +:+       +#+         #
+#    By: lucas <lucas@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/08 13:29:33 by lumaret           #+#    #+#              #
-#    Updated: 2024/02/19 20:32:00 by lumaret          ###   ########.fr        #
+#    Updated: 2024/02/20 13:01:38 by lucas            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,15 +21,11 @@ SRCS	=	ft_memset.c ft_bzero.c ft_memcpy.c ft_memmove.c ft_memchr.c \
 BONUS	=	ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c ft_lstdelone.c \
 			ft_lstclear.c ft_lstiter.c ft_lstmap.c
 
-PRINTF	=	ft_printf/ft_printf.c ft_printf/ft_handlechar.c ft_printf/ft_handlenbr.c ft_printf/ft_handleptr.c
-
 OBJB	=	$(BONUS:.c=.o)
 
 OBJM	=	$(MAIN:.c=.o)
 
 OBJS 	= 	$(SRCS:.c=.o)
-
-OBJP	=	$(PRINTF:.c=.o)
 
 NAME	= 	libft.a
 
@@ -45,7 +41,7 @@ RM		= 	rm -f
 	$(CC) $(CFLAGS) -o $(<:.c=.o) -c $<
 
 $(NAME):	$(OBJS) $(OBJB)
-	$(AR) $(NAME) $(OBJS) $(OBJB) $(OBJP)
+	$(AR) $(NAME) $(OBJS) $(OBJB)
 
 all:		$(NAME)
 

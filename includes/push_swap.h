@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lumaret <lumaret@student.42.fr>            +#+  +:+       +#+        */
+/*   By: lucas <lucas@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 02:22:48 by lumaret           #+#    #+#             */
-/*   Updated: 2024/02/19 20:11:32 by lumaret          ###   ########.fr       */
+/*   Updated: 2024/02/20 13:00:49 by lucas            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <stdbool.h>
 # include <limits.h>
 # include "../libft/libft.h"
-# include "../ft_printf/ft_printf.h"
+# include "../src/ft_printf/ft_printf.h"
 
 typedef struct s_stack_node
 {
@@ -78,5 +78,6 @@ void		pb(t_stack_node **a, t_stack_node **b, bool print);
 void	sort_three(t_stack_node **a);
 void	turk_sort(t_stack_node **a, t_stack_node **b);
 
+int		ft_printf(const char *format, ...);
 
 #endif
