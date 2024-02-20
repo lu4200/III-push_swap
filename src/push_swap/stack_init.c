@@ -6,7 +6,7 @@
 /*   By: lumaret <lumaret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 19:48:20 by lumaret           #+#    #+#             */
-/*   Updated: 2024/02/20 16:59:55 by lumaret          ###   ########.fr       */
+/*   Updated: 2024/02/20 21:41:15 by lumaret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,9 +93,9 @@ t_stack_node	*the_cheapest(t_stack_node *stack)
 
 void	for_each_push(t_stack_node **stack, t_stack_node *top_node, char name)
 {
-	while (*stack != top_node) 
+	while (*stack != top_node)
 	{
-		if (name == 'a') 
+		if (name == 'a')
 		{
 			if (top_node->above_med)
 				ra(stack, false);
