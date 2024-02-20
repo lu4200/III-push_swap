@@ -6,7 +6,7 @@
 #    By: lumaret <lumaret@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/15 15:59:30 by lumaret           #+#    #+#              #
-#    Updated: 2024/02/20 15:36:30 by lumaret          ###   ########.fr        #
+#    Updated: 2024/02/20 16:20:04 by lumaret          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ INC				= includes/
 SRC_DIR				= src/
 OBJ_DIR				= obj/
 
-CC				= clang
+CC				= gcc -g
 CFLAGS				= -Wall -Werror -Wextra -I
 RM				= rm -f
 

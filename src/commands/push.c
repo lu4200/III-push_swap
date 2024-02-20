@@ -6,31 +6,34 @@
 /*   By: lumaret <lumaret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 15:36:44 by lumaret           #+#    #+#             */
-/*   Updated: 2024/02/20 15:24:19 by lumaret          ###   ########.fr       */
+/*   Updated: 2024/02/20 17:15:33 by lumaret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-static void	push(t_stack_node **dest, t_stack_node **source)
-{
-	t_stack_node	*pushed;
 
-	if (!source)
+static void	push(t_stack_node **dst, t_stack_node **src)
+{
+	t_stack_node	*push_node;
+
+	if (!*src)
 		return ;
-	pushed = *source;
-	*source = (*source)->next;
-	pushed->prev = NULL;
-	if (!*dest)
+	push_node = *src;
+	*src = (*src)->next;
+	if (*src)
+		(*src)->prev = NULL;
+	push_node->prev = NULL;
+	if (!*dst)
 	{
-		*dest = pushed;
-		pushed->next = NULL;
+		*dst = push_node;
+		push_node->next = NULL;
 	}
 	else
 	{
-		pushed->next = *dest; // push devient le top o stack
-		pushed->next->prev = pushed; // liaison bi-directionnelle
-		*dest = pushed; // le haut de la stack pointe vers le noeud recemment ajoute
+		push_node->next = *dst;
+		push_node->next->prev = push_node;
+		*dst = push_node;
 	}
 }
 
