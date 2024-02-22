@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_stacks.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lumaret <lumaret@student.42.fr>            +#+  +:+       +#+        */
+/*   By: lucas <lucas@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/10 21:44:46 by lumaret           #+#    #+#             */
-/*   Updated: 2024/02/20 20:29:46 by lumaret          ###   ########.fr       */
+/*   Updated: 2024/02/22 11:39:00 by lucas            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,25 +63,22 @@ static void	put_top(t_stack_node **a)
 	}
 }
 
-// algo dans les graaaaandes lignes
 void	turk_sort(t_stack_node **a, t_stack_node **b)
 {
-	int	lena;
+	int	len_a;
 
-	lena = stack_len(*a);
-	//push 2 element de a dans b si lena > 3 sinon tri a 3
-	if (lena-- > 3 && !is_sorted(*a))
-		pb(a, b, false);
-	if (lena-- > 3 && !is_sorted(*a))
-		pb(a, b, false);
-	while (lena-- > 3 && !is_sorted(*a))
+	len_a = stack_len(*a);
+	if (len_a-- > 3 && !is_sorted(*a))
+		pb(b, a, false);
+	if (len_a-- > 3 && !is_sorted(*a))
+		pb(b, a, false);
+	while (len_a-- > 3 && !is_sorted(*a))
 	{
 		init_node_a(*a, *b);
-// push tous les elements de a vers b prealablement triee jusqua len_a=3
 		move_a_2_b(a, b);
 	}
 	sort_three(a);
-	while (*b != NULL)
+	while (*b)
 	{
 		init_node_b(*a, *b);
 		move_b_2_a(a, b);

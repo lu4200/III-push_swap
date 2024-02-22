@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   a_2_b.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lumaret <lumaret@student.42.fr>            +#+  +:+       +#+        */
+/*   By: lucas <lucas@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 17:53:59 by lumaret           #+#    #+#             */
-/*   Updated: 2024/02/20 19:22:36 by lumaret          ###   ########.fr       */
+/*   Updated: 2024/02/22 11:39:03 by lucas            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	current_index(t_stack_node *stack)
 	int	i;
 	int	median;
 
-	i = 0; 
+	i = 0;
 	if (!stack)
 		return ;
 	median = stack_len(stack) / 2;

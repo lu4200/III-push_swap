@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack_init.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lumaret <lumaret@student.42.fr>            +#+  +:+       +#+        */
+/*   By: lucas <lucas@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 19:48:20 by lumaret           #+#    #+#             */
-/*   Updated: 2024/02/20 21:41:15 by lumaret          ###   ########.fr       */
+/*   Updated: 2024/02/22 11:39:08 by lucas            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ static long	ft_atol(const char *s)
 		res = res * 10 + (*s++ - '0');
 	return (res * sign);
 }
-
+// lst add front with case when stack is empty
 static void	add_node(t_stack_node **stack, int n)
 {
 	t_stack_node	*node;

@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lumaret <lumaret@student.42.fr>            +#+  +:+       +#+        */
+/*   By: lucas <lucas@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 15:36:44 by lumaret           #+#    #+#             */
-/*   Updated: 2024/02/20 19:34:34 by lumaret          ###   ########.fr       */
+/*   Updated: 2024/02/22 11:38:57 by lucas            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
 
-static void	push(t_stack_node **src, t_stack_node **dst)
+static void	push(t_stack_node **dst, t_stack_node **src)
 {
 	t_stack_node	*push_node;
 
@@ -39,14 +39,14 @@ static void	push(t_stack_node **src, t_stack_node **dst)
 
 void	pa(t_stack_node **a, t_stack_node **b, bool print)
 {
-	push(b, a);
-	if (!print)
+	push(a, b); 
+	if (!print) 
 		write(1, "pa\n", 3);
 }
 
-void	pb(t_stack_node **a, t_stack_node **b, bool print)
+void	pb(t_stack_node **b, t_stack_node **a, bool print)
 {
-	push(a, b);
+	push(b, a);
 	if (!print)
 		write(1, "pb\n", 3);
 }
