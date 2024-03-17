@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   error.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lucas <lucas@student.42.fr>                +#+  +:+       +#+        */
+/*   By: lumaret <lumaret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 20:19:19 by lumaret           #+#    #+#             */
-/*   Updated: 2024/02/22 11:39:05 by lucas            ###   ########.fr       */
+/*   Updated: 2024/03/17 15:14:22 by lumaret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,6 @@ void	free_stack(t_stack_node **stack)
 	while (current)
 	{
 		tmp = current->next;
-/*		current->nb = 0; debug*/
 		free(current);
 		current = tmp;
 	}
