@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   a_2_b.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lucas <lucas@student.42.fr>                +#+  +:+       +#+        */
+/*   By: lumaret <lumaret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 17:53:59 by lumaret           #+#    #+#             */
-/*   Updated: 2024/02/22 11:39:03 by lucas            ###   ########.fr       */
+/*   Updated: 2024/03/17 15:11:42 by lumaret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
-#include <stdio.h>
 
 void	current_index(t_stack_node *stack)
 {
