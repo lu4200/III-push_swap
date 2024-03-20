@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   sort_stacks.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lucas <lucas@student.42.fr>                +#+  +:+       +#+        */
+/*   By: lumaret <lumaret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/10 21:44:46 by lumaret           #+#    #+#             */
-/*   Updated: 2024/02/22 11:39:00 by lucas            ###   ########.fr       */
+/*   Updated: 2024/03/20 14:47:04 by lumaret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
-// stat rotate2
-static void	rotate2(t_stack_node **a, t_stack_node **b, 
+
+static void	rotate2(t_stack_node **a, t_stack_node **b,
 		t_stack_node *cheapest_node)
 {
 	while (*b != cheapest_node->target && *a != cheapest_node)
@@ -21,8 +21,7 @@ static void	rotate2(t_stack_node **a, t_stack_node **b,
 	current_index(*b);
 }
 
-// stat rrotate2
-static void	rrotate2(t_stack_node **a, t_stack_node **b, 
+static void	rrotate2(t_stack_node **a, t_stack_node **b,
 		t_stack_node *cheapest_node)
 {
 	while (*b != cheapest_node->target && *a != cheapest_node)
@@ -54,35 +53,11 @@ static void	move_b_2_a(t_stack_node **a, t_stack_node **b)
 //put top
 static void	put_top(t_stack_node **a)
 {
-	while ((*a)->nb != min_o_stack(*a)->nb) 
+	while ((*a)->nb != min_o_stack(*a)->nb)
 	{
 		if (min_o_stack(*a)->above_med)
 			ra(a, false);
 		else
 			rra(a, false);
 	}
-}
-
-void	turk_sort(t_stack_node **a, t_stack_node **b)
-{
-	int	len_a;
-
-	len_a = stack_len(*a);
-	if (len_a-- > 3 && !is_sorted(*a))
-		pb(b, a, false);
-	if (len_a-- > 3 && !is_sorted(*a))
-		pb(b, a, false);
-	while (len_a-- > 3 && !is_sorted(*a))
-	{
-		init_node_a(*a, *b);
-		move_a_2_b(a, b);
-	}
-	sort_three(a);
-	while (*b)
-	{
-		init_node_b(*a, *b);
-		move_b_2_a(a, b);
-	}
-	current_index(*a);
-	put_top(a);
 }

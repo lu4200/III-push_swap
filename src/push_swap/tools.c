@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   tools.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lucas <lucas@student.42.fr>                +#+  +:+       +#+        */
+/*   By: lumaret <lumaret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 19:55:34 by lumaret           #+#    #+#             */
-/*   Updated: 2024/02/22 11:39:09 by lucas            ###   ########.fr       */
+/*   Updated: 2024/03/20 14:48:55 by lumaret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,30 +26,6 @@ int	stack_len(t_stack_node *stack)
 		len ++;
 	}
 	return (len);
-}
-
-void	print_stack(t_stack_node* a, t_stack_node* b)
-{
-	t_stack_node	*current1;
-	t_stack_node	*current2;
-
-	current1 = a;
-	current2 = b;
-	printf("Contenu de la liste a : ");
-	while (current1 != NULL)
-	{
-		printf("%d ", current1->nb);
-		current1 = current1->next;
-	}
-	printf("\n");
-
-	printf("Contenu de la liste b : ");
-	while (current2 != NULL)
-	{
-		printf("%d ", current2->nb);
-		current2 = current2->next;
-	}
-	printf("\n");
 }
 
 t_stack_node	*point_on_last(t_stack_node *stack)
@@ -76,7 +52,7 @@ bool	is_sorted(t_stack_node *stack)
 
 t_stack_node	*min_o_stack(t_stack_node *stack)
 {
-	long		min;
+	long			min;
 	t_stack_node	*min_node;
 
 	if (!stack)
@@ -96,7 +72,7 @@ t_stack_node	*min_o_stack(t_stack_node *stack)
 
 t_stack_node	*max_o_stack(t_stack_node *stack)
 {
-	long		max;
+	long			max;
 	t_stack_node	*max_node;
 
 	if (!stack)

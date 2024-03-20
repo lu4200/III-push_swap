@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack_init.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lucas <lucas@student.42.fr>                +#+  +:+       +#+        */
+/*   By: lumaret <lumaret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 19:48:20 by lumaret           #+#    #+#             */
-/*   Updated: 2024/02/22 11:39:08 by lucas            ###   ########.fr       */
+/*   Updated: 2024/03/20 14:35:16 by lumaret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 static long	ft_atol(const char *s)
 {
 	long	res;
-	int	sign;
+	int		sign;
 
 	res = 0;
 	sign = 1;
@@ -32,7 +32,7 @@ static long	ft_atol(const char *s)
 		res = res * 10 + (*s++ - '0');
 	return (res * sign);
 }
-// lst add front with case when stack is empty
+
 static void	add_node(t_stack_node **stack, int n)
 {
 	t_stack_node	*node;
@@ -40,19 +40,19 @@ static void	add_node(t_stack_node **stack, int n)
 
 	if (!stack)
 		return ;
-	node = malloc(sizeof(t_stack_node)); //new node
+	node = malloc(sizeof(t_stack_node));
 	if (!node)
 		return ;
-	node->next = NULL; // first node so nxt = NULL
-	node->nb = n;	//assgin value to node
+	node->next = NULL;
+	node->nb = n;
 	if (!(*stack))
 	{
-		*stack = node; // if no stack, 1st element = node
-		node->prev = NULL; // set prev NULL X -> data -> X
+		*stack = node;
+		node->prev = NULL;
 	}
 	else
 	{
-		last_node = point_on_last(*stack); // point on the last
+		last_node = point_on_last(*stack);
 		last_node->next = node;
 		node->prev = last_node;
 	}
@@ -102,7 +102,7 @@ void	for_each_push(t_stack_node **stack, t_stack_node *top_node, char name)
 			else
 				rra(stack, false);
 		}
-		else if (name == 'b') //If not, and it is stack `b`, execute the following
+		else if (name == 'b')
 		{
 			if (top_node->above_med)
 				rb(stack, false);

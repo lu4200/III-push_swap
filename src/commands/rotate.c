@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lucas <lucas@student.42.fr>                +#+  +:+       +#+        */
+/*   By: lumaret <lumaret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/10 23:54:47 by lumaret           #+#    #+#             */
-/*   Updated: 2024/02/22 11:39:00 by lucas            ###   ########.fr       */
+/*   Updated: 2024/03/20 14:46:11 by lumaret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,4 +47,3 @@ void	rr(t_stack_node **a, t_stack_node **b, bool print)
 	if (!print)
 		write(1, "rr\n", 3);
 }
-

@@ -6,12 +6,11 @@
 /*   By: lumaret <lumaret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 15:36:44 by lumaret           #+#    #+#             */
-/*   Updated: 2024/03/17 15:12:02 by lumaret          ###   ########.fr       */
+/*   Updated: 2024/03/20 14:45:39 by lumaret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
-
 
 static void	push(t_stack_node **dst, t_stack_node **src)
 {

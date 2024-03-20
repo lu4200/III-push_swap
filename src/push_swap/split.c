@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   split.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lucas <lucas@student.42.fr>                +#+  +:+       +#+        */
+/*   By: lumaret <lumaret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 20:53:46 by lumaret           #+#    #+#             */
-/*   Updated: 2024/02/22 11:39:07 by lucas            ###   ########.fr       */
+/*   Updated: 2024/03/20 14:48:45 by lumaret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 static	int	count_words(char *s, char sep)
 {
-	int	count;
-	bool		in_word;
+	int		count;
+	bool	in_word;
 
 	count = 0;
 	while (*s)
@@ -73,7 +73,7 @@ char	**ps_split(char *s, char c)
 		return (NULL);
 	while (nb_words-- >= 0)
 	{
-		if (i == 0) 
+		if (i == 0)
 		{
 			result[i] = malloc(sizeof(char));
 			if (!result[i])

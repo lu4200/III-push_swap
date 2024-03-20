@@ -6,7 +6,7 @@
 #    By: lumaret <lumaret@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/15 15:59:30 by lumaret           #+#    #+#              #
-#    Updated: 2024/02/20 17:41:13 by lumaret          ###   ########.fr        #
+#    Updated: 2024/03/20 14:28:50 by lumaret          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,8 @@ COMMANDS_DIR			=	$(SRC_DIR)commands/push.c \
 						$(SRC_DIR)commands/rotate.c \
 						$(SRC_DIR)commands/sort_stacks.c \
 						$(SRC_DIR)commands/sort_three.c \
-						$(SRC_DIR)commands/swap.c
+						$(SRC_DIR)commands/swap.c \
+						$(SRC_DIR)commands/sorting.c
 
 PUSH_SWAP_DIR			=	$(SRC_DIR)push_swap/error.c \
 						$(SRC_DIR)push_swap/a_2_b.c \
