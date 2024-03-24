@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_stacks.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lumaret <lumaret@student.42.fr>            +#+  +:+       +#+        */
+/*   By: lucas <lucas@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/10 21:44:46 by lumaret           #+#    #+#             */
-/*   Updated: 2024/03/20 14:47:04 by lumaret          ###   ########.fr       */
+/*   Updated: 2024/03/24 14:06:32 by lucas            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,15 +17,6 @@ static void	rotate2(t_stack_node **a, t_stack_node **b,
 {
 	while (*b != cheapest_node->target && *a != cheapest_node)
 		rr(a, b, false);
-	current_index(*a);
-	current_index(*b);
-}
-
-static void	rrotate2(t_stack_node **a, t_stack_node **b,
-		t_stack_node *cheapest_node)
-{
-	while (*b != cheapest_node->target && *a != cheapest_node)
-		rrr(a, b, false);
 	current_index(*a);
 	current_index(*b);
 }
@@ -50,7 +41,6 @@ static void	move_b_2_a(t_stack_node **a, t_stack_node **b)
 	pa(a, b, false);
 }
 
-//put top
 static void	put_top(t_stack_node **a)
 {
 	while ((*a)->nb != min_o_stack(*a)->nb)
@@ -61,3 +51,28 @@ static void	put_top(t_stack_node **a)
 			rra(a, false);
 	}
 }
+
+void	turk_sort(t_stack_node **a, t_stack_node **b)
+{
+	int	len_a;
+
+	len_a = stack_len(*a);
+	if (len_a-- > 3 && !is_sorted(*a))
+		pb(b, a, false);
+	if (len_a-- > 3 && !is_sorted(*a))
+		pb(b, a, false);
+	while (len_a-- > 3 && !is_sorted(*a))
+	{
+		init_node_a(*a, *b);
+		move_a_2_b(a, b);
+	}
+	sort_three(a);
+	while (*b)
+	{
+		init_node_b(*a, *b);
+		move_b_2_a(a, b);
+	}
+	current_index(*a);
+	put_top(a);
+}
+
