@@ -6,83 +6,91 @@
 /*   By: lumaret <lumaret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 20:53:46 by lumaret           #+#    #+#             */
-/*   Updated: 2024/03/20 14:48:45 by lumaret          ###   ########.fr       */
+/*   Updated: 2024/03/30 19:03:22 by lumaret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-static	int	count_words(char *s, char sep)
+static int	count_words(char const *s, char c)
 {
-	int		count;
-	bool	in_word;
+	int		i;
+	int		words;
 
-	count = 0;
-	while (*s)
+	words = 0;
+	i = 0;
+	while (s[i])
 	{
-		in_word = false;
-		while (*s == sep)
-			++s;
-		while (*s != sep && *s)
-		{
-			if (!in_word)
-			{
-				count++;
-				in_word = true;
-			}
-			++s;
-		}
-	}	
-	return (count);
+		if (s[i] != c && (s[i + 1] == c || s[i + 1] == '\0'))
+			words++;
+		i++;
+	}
+	return (words);
 }
 
-static char	*get_next_word(char *s, char sep)
+static int	words_len(char const *s, char c)
 {
-	static int	cursor = 0;
-	char		*next_word;
-	int			len;
-	int			i;
+	int		i;
+	int		len;
 
-	len = 0;
 	i = 0;
-	while (s[cursor] == sep)
-		++cursor;
-	while ((s[cursor + len] != sep) && s[cursor + len])
-		++len;
-	next_word = malloc((size_t)len * sizeof(char) + 1);
-	if (!next_word)
-		return (NULL);
-	while ((s[cursor] != sep) && s[cursor])
-		next_word[i++] = s[cursor++];
-	next_word[i] = '\0';
-	return (next_word);
+	len = 0;
+	while (s[i] != c && s[i] != '\0')
+	{
+		i++;
+		len++;
+	}
+	return (len);
+}
+
+void	*leak(char **splitted)
+{
+	int	i;
+
+	i = 0;
+	while (splitted[i])
+	{
+		free(splitted[i]);
+		i++;
+	}
+	free(splitted);
+	return (NULL);
+}
+
+static char	**fill(char const *s, int words, char c, char **splitted)
+{
+	int		i;
+	int		j;
+	int		len;
+
+	i = -1;
+	while (++i < words)
+	{
+		while (*s == c)
+			s++;
+		len = words_len(s, c);
+		if (!(splitted[i] = (char *)malloc(sizeof(char) * (len + 1))))
+			return (leak(splitted));
+		j = 0;
+		while (j < len)
+			splitted[i][j++] = *s++;
+		splitted[i][j] = '\0';
+	}
+	splitted[i] = NULL;
+	return (splitted);
 }
 
 char	**ps_split(char *s, char c)
 {
-	int			nb_words;
-	char		**result;
-	int			i;
+	char	**splitted;
+	int		words;
 
-	i = 0;
-	nb_words = count_words(s, c);
-	if (!nb_words)
-		exit(1);
-	result = malloc(sizeof(char *) * (size_t)(nb_words + 1));
-	if (!result)
+	if (!s)
 		return (NULL);
-	while (nb_words-- >= 0)
-	{
-		if (i == 0)
-		{
-			result[i] = malloc(sizeof(char));
-			if (!result[i])
-				return (NULL);
-			result[i++][0] = '\0';
-			continue ;
-		}
-		result[i++] = get_next_word(s, c);
-	}
-	result[i] = NULL;
-	return (result);
+	words = count_words(s, c);
+	splitted = (char **)malloc(sizeof(char *) * (words + 1));
+	if (!splitted)
+		return (NULL);
+	splitted = fill(s, words, c, splitted);
+	return (splitted);
 }

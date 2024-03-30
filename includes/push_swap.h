@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lucas <lucas@student.42.fr>                +#+  +:+       +#+        */
+/*   By: lumaret <lumaret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 02:22:48 by lumaret           #+#    #+#             */
-/*   Updated: 2024/03/24 14:05:34 by lucas            ###   ########.fr       */
+/*   Updated: 2024/03/30 19:02:14 by lumaret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,5 +63,7 @@ void		rrr(t_stack_node **a, t_stack_node **b, bool print);
 void		pa(t_stack_node **a, t_stack_node **b, bool print);
 void		pb(t_stack_node **a, t_stack_node **b, bool print);
 void		rrotate2(t_stack_node **a, t_stack_node **b, t_stack_node *cheapest_node);
+char	**free_array(char **array);
+void	*leak(char **splitted);
 
 #endif
