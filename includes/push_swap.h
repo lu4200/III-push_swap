@@ -6,7 +6,7 @@
 /*   By: lumaret <lumaret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 02:22:48 by lumaret           #+#    #+#             */
-/*   Updated: 2024/03/31 16:56:59 by lumaret          ###   ########.fr       */
+/*   Updated: 2024/03/31 17:01:03 by lumaret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,6 @@
 # include <unistd.h>
 # include <limits.h>
 # include <stdlib.h>
-
-t_stack_node					*the_cheapest(t_stack_node *stack);
-t_stack_node					*point_on_last(t_stack_node *stack);
-t_stack_node					*max_o_stack(t_stack_node *stack);
-t_stack_node					*min_o_stack(t_stack_node *stack);
 
 typedef struct s_stack_node
 {
@@ -36,6 +31,14 @@ typedef struct s_stack_node
 	struct s_stack_node	*target;
 }	t_stack_node;
 
+t_stack_node					*the_cheapest(t_stack_node *stack);
+t_stack_node					*point_on_last(t_stack_node *stack);
+t_stack_node					*max_o_stack(t_stack_node *stack);
+t_stack_node					*min_o_stack(t_stack_node *stack);
+void							rrotate2(t_stack_node **a, t_stack_node **b,
+									t_stack_node *cheap_n);
+void							for_each_push(t_stack_node **stack,
+									t_stack_node *top_n, char name);
 void							print_error(t_stack_node **a);
 void							free_stack(t_stack_node **stack);
 void							init_stack_a(t_stack_node **a, char **argv);
@@ -63,7 +66,5 @@ void							ss(t_stack_node **a, t_stack_node **b, bool p);
 void							rrr(t_stack_node **a, t_stack_node **b, bool p);
 void							pa(t_stack_node **a, t_stack_node **b, bool p);
 void							pb(t_stack_node **a, t_stack_node **b, bool p);
-void							rrotate2(t_stack_node **a, t_stack_node **b, t_stack_node *cheap_n);
-void							for_each_push(t_stack_node **stack, t_stack_node *top_n, char name);
 
 #endif
