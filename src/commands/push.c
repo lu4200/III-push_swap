@@ -6,7 +6,7 @@
 /*   By: lumaret <lumaret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 15:36:44 by lumaret           #+#    #+#             */
-/*   Updated: 2024/03/20 14:45:39 by lumaret          ###   ########.fr       */
+/*   Updated: 2024/03/31 16:56:07 by lumaret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,16 +36,16 @@ static void	push(t_stack_node **dst, t_stack_node **src)
 	}
 }
 
-void	pa(t_stack_node **a, t_stack_node **b, bool print)
+void	pa(t_stack_node **a, t_stack_node **b, bool p)
 {
 	push(a, b);
-	if (!print)
+	if (!p)
 		write(1, "pa\n", 3);
 }
 
-void	pb(t_stack_node **b, t_stack_node **a, bool print)
+void	pb(t_stack_node **b, t_stack_node **a, bool p)
 {
 	push(b, a);
-	if (!print)
+	if (!p)
 		write(1, "pb\n", 3);
 }

@@ -6,7 +6,7 @@
 /*   By: lumaret <lumaret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 19:48:20 by lumaret           #+#    #+#             */
-/*   Updated: 2024/03/20 14:35:16 by lumaret          ###   ########.fr       */
+/*   Updated: 2024/03/31 16:41:34 by lumaret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,20 +91,20 @@ t_stack_node	*the_cheapest(t_stack_node *stack)
 	return (NULL);
 }
 
-void	for_each_push(t_stack_node **stack, t_stack_node *top_node, char name)
+void	for_each_push(t_stack_node **stack, t_stack_node *top_n, char name)
 {
-	while (*stack != top_node)
+	while (*stack != top_n)
 	{
 		if (name == 'a')
 		{
-			if (top_node->above_med)
+			if (top_n->above_med)
 				ra(stack, false);
 			else
 				rra(stack, false);
 		}
 		else if (name == 'b')
 		{
-			if (top_node->above_med)
+			if (top_n->above_med)
 				rb(stack, false);
 			else
 				rrb(stack, false);

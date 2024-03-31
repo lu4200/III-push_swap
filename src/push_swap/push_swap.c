@@ -6,7 +6,7 @@
 /*   By: lumaret <lumaret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 02:45:52 by lumaret           #+#    #+#             */
-/*   Updated: 2024/03/30 18:59:08 by lumaret          ###   ########.fr       */
+/*   Updated: 2024/03/31 16:33:13 by lumaret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int	main(int argc, char **argv)
 {
+	char			**argv2;
 	t_stack_node	*a;
 	t_stack_node	*b;
-	char		**argv2;
 
 	a = NULL;
 	b = NULL;

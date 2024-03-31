@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rev_rotate.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lucas <lucas@student.42.fr>                +#+  +:+       +#+        */
+/*   By: lumaret <lumaret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 19:02:18 by lumaret           #+#    #+#             */
-/*   Updated: 2024/02/22 11:38:59 by lucas            ###   ########.fr       */
+/*   Updated: 2024/03/31 16:56:14 by lumaret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,10 +40,10 @@ void	rrb(t_stack_node **b, bool print)
 		write(1, "rrb\n", 4);
 }
 
-void	rrr(t_stack_node **a, t_stack_node **b, bool print)
+void	rrr(t_stack_node **a, t_stack_node **b, bool p)
 {
 	rrotate(a);
 	rrotate(b);
-	if (!print)
+	if (!p)
 		write(1, "rrr\n", 4);
 }

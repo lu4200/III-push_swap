@@ -6,7 +6,7 @@
 /*   By: lumaret <lumaret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 20:53:46 by lumaret           #+#    #+#             */
-/*   Updated: 2024/03/30 19:03:22 by lumaret          ###   ########.fr       */
+/*   Updated: 2024/03/31 16:34:28 by lumaret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,8 @@ static char	**fill(char const *s, int words, char c, char **splitted)
 		while (*s == c)
 			s++;
 		len = words_len(s, c);
-		if (!(splitted[i] = (char *)malloc(sizeof(char) * (len + 1))))
+		splitted[i] = (char *)malloc(sizeof(char) * (len + 1));
+		if (!splitted)
 			return (leak(splitted));
 		j = 0;
 		while (j < len)

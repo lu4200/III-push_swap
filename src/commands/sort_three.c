@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_three.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lucas <lucas@student.42.fr>                +#+  +:+       +#+        */
+/*   By: lumaret <lumaret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/10 21:08:41 by lumaret           #+#    #+#             */
-/*   Updated: 2024/03/24 14:05:02 by lucas            ###   ########.fr       */
+/*   Updated: 2024/03/31 16:36:43 by lumaret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,9 @@ void	sort_three(t_stack_node **a)
 }
 
 void	rrotate2(t_stack_node **a, t_stack_node **b,
-		t_stack_node *cheapest_node)
+		t_stack_node *cheap_n)
 {
-	while (*b != cheapest_node->target && *a != cheapest_node)
+	while (*b != cheap_n->target && *a != cheap_n)
 		rrr(a, b, false);
 	current_index(*a);
 	current_index(*b);

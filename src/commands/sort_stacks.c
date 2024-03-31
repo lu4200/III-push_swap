@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_stacks.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lucas <lucas@student.42.fr>                +#+  +:+       +#+        */
+/*   By: lumaret <lumaret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/10 21:44:46 by lumaret           #+#    #+#             */
-/*   Updated: 2024/03/24 14:06:32 by lucas            ###   ########.fr       */
+/*   Updated: 2024/03/31 16:32:16 by lumaret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,4 +75,3 @@ void	turk_sort(t_stack_node **a, t_stack_node **b)
 	current_index(*a);
 	put_top(a);
 }
-
