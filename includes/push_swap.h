@@ -6,7 +6,7 @@
 /*   By: lumaret <lumaret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 02:22:48 by lumaret           #+#    #+#             */
-/*   Updated: 2024/03/31 17:02:52 by lumaret          ###   ########.fr       */
+/*   Updated: 2024/04/02 19:18:28 by lumaret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,5 +67,6 @@ void							rrr(t_stack_node **a, t_stack_node **b, bool p);
 void							pa(t_stack_node **a, t_stack_node **b, bool p);
 void							pb(t_stack_node **a, t_stack_node **b, bool p);
 void							rr(t_stack_node **a, t_stack_node **b, bool p);
+void							error_error(void);
 
 #endif
