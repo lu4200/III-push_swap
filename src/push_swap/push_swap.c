@@ -6,7 +6,7 @@
 /*   By: lumaret <lumaret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 02:45:52 by lumaret           #+#    #+#             */
-/*   Updated: 2024/04/04 20:41:50 by lumaret          ###   ########.fr       */
+/*   Updated: 2024/04/04 21:36:39 by lumaret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,13 @@ void	parsing(t_stack_node **a, int argc, char **argv)
 		if (!argv2)
 			exit (1);
 	}
-	init_stack_a(a, argv2 + 1);
 	if (argc == 2)
+	{
+		init_stack_a(a, argv2 + 1, argv2);
 		leak(argv2);
+	}
+	else
+		init_stack_a(a, argv2 + 1, NULL);
 }
 
 int	main(int argc, char **argv)

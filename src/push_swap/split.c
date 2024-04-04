@@ -6,7 +6,7 @@
 /*   By: lumaret <lumaret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 20:53:46 by lumaret           #+#    #+#             */
-/*   Updated: 2024/04/04 20:26:35 by lumaret          ###   ########.fr       */
+/*   Updated: 2024/04/04 21:23:05 by lumaret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ static int	count_words(char *str, char delimeter)
 	return (words);
 }
 
-static char	*get_next_word(char *str, char delimeter)
+static char	*get_next_word(char *str, char delimeter, char **r)
 {
 	static int	cursor = 0;
 	char		*next;
@@ -52,7 +52,10 @@ static char	*get_next_word(char *str, char delimeter)
 		++len;
 	next = malloc((size_t)len * sizeof(char) + 1);
 	if (!next)
-		return (NULL);
+	{
+		leak(r);
+		exit(1);
+	}
 	while ((str[cursor] != delimeter) && str[cursor])
 		next[i++] = str[cursor++];
 	next[i] = '\0';
@@ -82,7 +85,7 @@ char	**ps_split(char *s, char c)
 			result_array[i++][0] = '\0';
 			continue ;
 		}
-		result_array[i++] = get_next_word(s, c);
+		result_array[i++] = get_next_word(s, c, result_array);
 	}
 	result_array[i] = NULL;
 	return (result_array);

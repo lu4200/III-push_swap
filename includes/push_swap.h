@@ -6,7 +6,7 @@
 /*   By: lumaret <lumaret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 02:22:48 by lumaret           #+#    #+#             */
-/*   Updated: 2024/04/04 20:40:18 by lumaret          ###   ########.fr       */
+/*   Updated: 2024/04/04 21:33:44 by lumaret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,10 @@ void							rrotate2(t_stack_node **a, t_stack_node **b,
 									t_stack_node *cheap_n);
 void							for_each_push(t_stack_node **stack,
 									t_stack_node *top_n, char name);
-void							print_error(t_stack_node **a);
+void							print_error(t_stack_node **a, char **r);
 void							free_stack(t_stack_node **stack);
-void							init_stack_a(t_stack_node **a, char **argv);
+void							init_stack_a(t_stack_node **a, char **argv,
+									char **r);
 void							current_index(t_stack_node *stack);
 void							set_cheapest(t_stack_node *stack);
 void							init_node_a(t_stack_node *a, t_stack_node *b);

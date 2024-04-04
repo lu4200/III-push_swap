@@ -6,7 +6,7 @@
 /*   By: lumaret <lumaret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 19:48:20 by lumaret           #+#    #+#             */
-/*   Updated: 2024/04/04 20:39:48 by lumaret          ###   ########.fr       */
+/*   Updated: 2024/04/04 21:31:53 by lumaret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ static void	add_node(t_stack_node **stack, int n)
 	}
 }
 
-void	init_stack_a(t_stack_node **a, char **argv)
+void	init_stack_a(t_stack_node **a, char **argv, char **r)
 {
 	long	n;
 	int		i;
@@ -69,12 +69,12 @@ void	init_stack_a(t_stack_node **a, char **argv)
 	while (argv[i])
 	{
 		if (syntaxe_error(argv[i]))
-			print_error(a);
+			print_error(a, r);
 		n = ft_atol(argv[i]);
 		if (n > INT_MAX || n < INT_MIN)
-			print_error(a);
+			print_error(a, r);
 		if (doublons_error(*a, (int)n))
-			print_error(a);
+			print_error(a, r);
 		add_node(a, (int)n);
 		i++;
 	}

@@ -6,7 +6,7 @@
 /*   By: lumaret <lumaret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 20:19:19 by lumaret           #+#    #+#             */
-/*   Updated: 2024/04/04 20:28:30 by lumaret          ###   ########.fr       */
+/*   Updated: 2024/04/04 21:32:04 by lumaret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,9 +60,10 @@ void	free_stack(t_stack_node **stack)
 	*stack = NULL;
 }
 
-void	print_error(t_stack_node **a)
+void	print_error(t_stack_node **a, char **r)
 {
 	free_stack(a);
+	leak(r);
 	write(2, "ERROR :/\n", 9);
 	exit (1);
 }
