@@ -6,7 +6,7 @@
 /*   By: lumaret <lumaret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 02:22:48 by lumaret           #+#    #+#             */
-/*   Updated: 2024/04/02 19:18:28 by lumaret          ###   ########.fr       */
+/*   Updated: 2024/04/04 19:12:50 by lumaret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ void							rb(t_stack_node **b, bool print);
 void							rra(t_stack_node **a, bool print);
 void							rrb(t_stack_node **b, bool print);
 char							**free_array(char **array);
-void							*leak(char **splitted);
+void							leak(char **splitted);
 int								stack_len(t_stack_node	*stack);
 int								syntaxe_error(char *str_n);
 int								doublons_error(t_stack_node *a, int n);
