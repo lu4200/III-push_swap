@@ -6,7 +6,7 @@
 /*   By: lumaret <lumaret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 20:53:46 by lumaret           #+#    #+#             */
-/*   Updated: 2024/04/04 19:11:19 by lumaret          ###   ########.fr       */
+/*   Updated: 2024/04/04 20:26:35 by lumaret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ char	**ps_split(char *s, char c)
 	i = 0;
 	words_count = count_words(s, c);
 	if (!words_count)
-		exit(1);
+		error_r();
 	result_array = malloc (sizeof(char *) * (size_t)(words_count + 2));
 	if (!result_array)
 		return (NULL);
