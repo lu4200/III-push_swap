@@ -6,7 +6,7 @@
 /*   By: lumaret <lumaret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 02:45:52 by lumaret           #+#    #+#             */
-/*   Updated: 2024/04/04 20:28:14 by lumaret          ###   ########.fr       */
+/*   Updated: 2024/04/04 20:41:50 by lumaret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,4 +50,20 @@ int	main(int argc, char **argv)
 	}
 	free_stack(&a);
 	return (0);
+}
+
+int	ft_strlenw0(const char *s)
+{
+	int	i;
+	int	index;
+
+	i = 0;
+	if (s[i] == '+' || s[i] == '-')
+		i++;
+	while (s[i] == '0')
+		i++;
+	index = 0;
+	while (s[index])
+		index++;
+	return (index - i);
 }

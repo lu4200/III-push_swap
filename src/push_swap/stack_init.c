@@ -6,7 +6,7 @@
 /*   By: lumaret <lumaret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 19:48:20 by lumaret           #+#    #+#             */
-/*   Updated: 2024/04/02 19:23:12 by lumaret          ###   ########.fr       */
+/*   Updated: 2024/04/04 20:39:48 by lumaret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ static long	ft_atol(const char *s)
 	long	res;
 	int		sign;
 
+	if (ft_strlenw0(s) > 11)
+		error_r();
 	res = 0;
 	sign = 1;
 	while (*s == ' ' || *s == '\t' || *s == '\n'
